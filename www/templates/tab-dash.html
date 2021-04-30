@@ -1,0 +1,20 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">Phone Number</div>
+          <select ng-model="user.number" ng-options="contact.phoneNumbers[0].value as contact.displayName for contact in contacts |orderBy :'displayName'">
+          </select>
+        </label>
+
+      <ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm">Send GPS Coordinates</ion-toggle>
+    </div>
+    <button class="button button-block button-large button-assertive" ng-click="sendHelpText()">
+      Help
+    </button>
+    <button class="button button-block button-large button-positive" ng-click="sendOkayText()">
+      I'm Okay!
+    </button>
+    <div>My location: {{gpsLocation}}</div>
+  </ion-content>
+</ion-view>
